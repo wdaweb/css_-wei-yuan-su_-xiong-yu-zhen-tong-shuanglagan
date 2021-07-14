@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            border:1px solid rgb(192,192,192);
+            z-index: -30;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            }
+        #a{
+            position: absolute;
+            width: 30px;
+            height: 80px;
+            border:1px solid rgb(192,192,192);
+            background: #000;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        /* #a,#b,#c,#d,#e,#f{} */
+
+        /* 套筒 */
+        #a::before{content: '';position: absolute;width: 140px;height: 80px;justify-content: center;align-items: center;top: -1px;left: 30px;border: 1px solid rgb(192,192,192);background: rgb(251,255,164);background: linear-gradient(rgba(251,255,164,1) 8%, rgba(221,224,145,1) 50%, rgba(251,255,164,1) 100%);}
+        #a::after {content: '';position: absolute;width: 140px;height: 80px;justify-content: center;align-items: center;top: -1px;left: -140px;border: 1px solid rgb(192,192,192);background: #fff;background: linear-gradient(rgba(255,255,255,1) 8%, rgba(211,211,211,1) 50%, rgba(255,255,255,1) 92%);}
+        /* 中間 */
+        #b::before{content: '';position: absolute;width: 420px;height: 50px;justify-content: center;align-items: center;border: 1px solid rgb(192,192,192);left: 285px;top: 222.5px;z-index: -30;background: rgb(255,255,255);background: linear-gradient(rgba(255,255,255,1) 8%, rgba(211,211,211,1) 50%, rgba(255,255,255,1) 92%);}
+        #b::after {content: '';position:absolute;width:30px;height:80px;left:255px;top:210px;border: 1px solid rgba(211,211,211,1);background: rgb(255,255,255);background: linear-gradient(rgba(255,255,255,1) 8%, rgba(211,211,211,1) 50%, rgba(255,255,255,1) 92%);}
+        #c::before{content: '';position: absolute;width: 60px;height: 1px;background: #000;right: 232.5px;top: 249.5px;}
+        #c::after {content: 'Made in Taiwan';position: absolute;left: 348px;top: 275px;color: grey;font-size: 12px;z-index: 5;}
+
+        
+        
+        /* #d::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 335px;top: 210px; }
+        #d::after {content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 345px;top: 210px; }
+        #e::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 355px;top: 210px; }
+        #e::after {content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 365px;top: 210px; } */
+        
+        /* 左邊刻度 */
+        #d1::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 355px;top: 210px;z-index: 20; }
+        #d2::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 365px;top: 210px;z-index: 20; }
+        #d3::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 375px;top: 210px;z-index: 20; }
+        #d4::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 385px;top: 210px;z-index: 20; }
+        #d5::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 395px;top: 210px;z-index: 20; }
+        #d6::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 405px;top: 210px;z-index: 20; }
+        #d7::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 415px;top: 210px;z-index: 20; }
+        #d8::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 425px;top: 210px;z-index: 20; }
+        #d9::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 435px;top: 210px;z-index: 20; }
+        #d10::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 445px;top: 210px;z-index: 20; }
+        #d11::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 455px;top: 210px;z-index: 20; }
+        #d12::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 465px;top: 210px;z-index: 20; }
+        #d13::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 475px;top: 210px;z-index: 20; }
+
+        /* 右邊刻度 */
+        #e1::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 525px;top: 210px;z-index: 20; }
+        #e2::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 535px;top: 210px;z-index: 20; }
+        #e3::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 545px;top: 210px;z-index: 20; }
+        #e4::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 555px;top: 210px;z-index: 20; }
+        #e5::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 565px;top: 210px;z-index: 20; }
+        #e6::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 575px;top: 210px;z-index: 20; }
+        #e7::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 585px;top: 210px;z-index: 20; }
+        #e8::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 595px;top: 210px;z-index: 20; }
+        #e9::before{ content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 605px;top: 210px;z-index: 20; }
+        #e10::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 615px;top: 210px;z-index: 20; }
+        #e11::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 625px;top: 210px;z-index: 20; }
+        #e12::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 635px;top: 210px;z-index: 20; }
+        #e13::before{content: '';position: absolute;width: 1px;height: 10px;background: grey;left: 645px;top: 210px;z-index: 20; }
+
+
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <div id="d5"></div>
+        <div id="d6"></div>
+        <div id="d7"></div>
+        <div id="d8"></div>
+        <div id="d9"></div>
+        <div id="d10"></div>
+        <div id="d11"></div>
+        <div id="d12"></div>
+        <div id="d13"></div>
+        <div id="e1"></div>
+        <div id="e2"></div>
+        <div id="e3"></div>
+        <div id="e4"></div>
+        <div id="e5"></div>
+        <div id="e6"></div>
+        <div id="e7"></div>
+        <div id="e8"></div>
+        <div id="e9"></div>
+        <div id="e10"></div>
+        <div id="e11"></div>
+        <div id="e12"></div>
+        <div id="e13"></div>
+        
+</div>
+</body>
+</html>

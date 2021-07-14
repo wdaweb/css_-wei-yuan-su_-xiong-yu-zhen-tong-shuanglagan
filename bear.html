@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+            border:1px solid #000;
+            z-index: -30;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            }
+        /* #a,#b,#c,#d,#e,#f{} */
+
+        #a::before{content: '';position: absolute;border-radius: 50%;width: 600px;height: 600px;background: #000;left: 200px;top: 200px;z-index: -20;}
+        /* 眼睛 */
+        #b::before{content: '';position: absolute;border-radius: 50%;width: 80px;height: 80px;background: #000;left: 340px;top: 360px;}
+        #b::after {content: '';position: absolute;border-radius: 50%;width: 80px;height: 80px;background: #000;right:340px;top: 360px;}
+        #c::before{content: '';position: absolute;border-radius: 50%;width: 120px;height: 120px;background: #fff;left: 320px;top: 340px;z-index: -10;}
+        #c::after {content: '';position: absolute;border-radius: 50%;width: 120px;height: 120px;background: #fff;right:320px;top: 340px;z-index: -10;}
+        /* 腮紅 */
+        #d::before{content: '';position: absolute;border-radius: 50%;width: 150px;height: 150px;background: red;left: 150px;top: 450px; }
+        #d::after {content: '';position: absolute;border-radius: 50%;width: 150px;height: 150px;background: red;right:150px;top: 450px; }
+        /* 耳 */
+        #e::before{content: '';position: absolute;border-radius: 50%;width: 90px;height: 90px;background: #000;left: 260px;top: 210px;}
+        #e::after {content: '';position: absolute;border-radius: 50%;width: 90px;height: 90px;background: #000;right:260px;top: 210px;}
+        #f::before{content: '';position: absolute;border-radius: 50%;width:  60px;height:  60px;background: #fff;left: 275px;top: 225px;}
+        #f::after {content: '';position: absolute;border-radius: 50%;width:  60px;height:  60px;background: #fff;right:275px;top: 225px;}
+        /* 口鼻 */
+        #g::before{content: '';position: absolute;border-radius: 50%;width: 270px;height: 170px;background: #fff;left: 365px;top: 460px; z-index: -5;}
+        #h::before{content: '';position: absolute;border-radius: 50%;width: 70px;height: 50px;background: #000;left: 465px;top: 480px; z-index: index 2;}
+        #i::before{content: '';position: absolute;border-radius: 50%;width: 150px;height: 50px;background: #000;left: 425px;top: 550px; z-index: index 2;}
+        #j::before{content: '';position: absolute;border-radius: 50%;width: 150px;height: 150px;background: red;left: 150px;top: 450px; }
+        /* V字 */
+        #k::before{content: '';position: absolute;;width: 80px;height: 80px;background: linear-gradient( 45deg,#000 50%,#fff 50%);             left: 345px;top: 670px; z-index: index 2;}
+        #l::before{content: '';position: absolute;;width: 80px;height: 80px;background: linear-gradient(45deg,#fff 50%,rgba(0,0,0,0.001) 50%); left: 425px;top: 670px; z-index: index 2;}
+        #m::before{content: '';position: absolute;;width: 80px;height: 80px;background: linear-gradient(135deg,rgba(0,0,0,0.001) 50%,#fff 50%);left: 505px;top: 670px; z-index: index 2;}
+        #n::before{content: '';position: absolute;;width: 80px;height: 80px;background: linear-gradient(135deg,#fff 50%,rgb(0, 0, 0) 50%);     left: 585px;top: 670px; z-index: index 2;}
+
+        
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <div id="d"></div>
+        <div id="e"></div>
+        <div id="f"></div>
+        <div id="g"></div>
+        <div id="h"></div>
+        <div id="i"></div>
+        <div id="j"></div>
+        <div id="k"></div>
+        <div id="l"></div>
+        <div id="m"></div>
+        <div id="n"></div>
+</div>
+</body>
+</html>
